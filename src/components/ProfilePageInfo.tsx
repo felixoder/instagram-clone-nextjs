@@ -6,11 +6,17 @@ import BackNav from "./BackNav";
 export default function ProfilePageInfo({
   profile,
   isOurProfile,
-  ourFollow
+  ourFollow,
+  postCount,
+  followerCount,
+  followingCount
 }:{
     profile: Profile,
     isOurProfile:boolean,
-    ourFollow: Follower | null
+    ourFollow: Follower | null,
+    postCount: number,
+    followerCount: number,
+    followingCount: number
    }){
   return(
   <div>
@@ -43,7 +49,8 @@ export default function ProfilePageInfo({
         </div>
       </section>
 
-      <section className="text-center mt-4">
+      <section className="flex-col flex-around gap-16 justify-center items-center text-center mt-4">
+        <div>
         <h1 className="text-xl font-bold">{profile.name}</h1>
         <p className="text-gray-500 mt-1 mb-1">{profile.subtitle}</p>
         <p className="">
@@ -51,6 +58,12 @@ export default function ProfilePageInfo({
           <br/>
           
         </p>
+        </div>
+        <div className="flex gap-3 justify-center items-center">
+          <h3 className="font-semibold text-md">Followers: <span className="text-xl font-bold">{followerCount}</span></h3>
+          <h3 className="font-semibold text-md">Following: <span className="text-xl font-bold">{followingCount}</span></h3>
+          <h3 className="font-semibold text-md">Posts:<span className="text-xl font-bold">{postCount}</span></h3>
+        </div>
       </section>
         {!isOurProfile && (
           <section className="flex justify-center my-3 ">

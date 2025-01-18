@@ -10,12 +10,18 @@ import ProfileNav from "./ProfileNav";
 export default async function ProfilePageContent({
   profile,
   isOurProfile=false,
-  ourFollow=null
-  
+  ourFollow=null,
+  postCount,
+  followerCount,
+  followingCount
+
 }:{
     profile: Profile,
     isOurProfile?: boolean
     ourFollow: Follower | null;
+    postCount: number,
+    followerCount: number,
+    followingCount: number
   }){
   return(
    <main>  
@@ -23,6 +29,9 @@ export default async function ProfilePageContent({
         profile={profile} 
         ourFollow={ourFollow} 
         isOurProfile={isOurProfile}
+        postCount={postCount as number}
+        followerCount={followerCount as number}
+        followingCount={followingCount as number}
       />
     <ProfileNav isOurProfile={isOurProfile} username={profile.username || ''}/> 
 

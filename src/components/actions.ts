@@ -150,16 +150,19 @@ export async function followProfile(profileIdToFollow: string) {
 export async function unFollowProfile(profileIdToFollow: string) {
   const sessionProfile = await prisma.profile.findFirstOrThrow({
     where: {
-      email: await getSessionEmailOrThrow()
-    }
-  })
+      email: await getSessionEmailOrThrow(),
+    },
+  });
+
   await prisma.follower.deleteMany({
     where: {
-      followingProfileEmail: sessionProfile.email,
-      followingProfileId: profileIdToFollow,
-    } 
-  })
+      followingProfileEmail: sessionProfile.email, // Email of the current user's profile
+      followedProfileId: profileIdToFollow, // Correctly target the profile being unfollowed
+    },
+  });
 }
+
+
 
 export async function bookmarkPost(postId: string) {
   const sessionEmail = await getSessionEmailOrThrow();
