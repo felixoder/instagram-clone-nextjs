@@ -1,4 +1,4 @@
-import {auth, signIn, signOut} from "@/auth";
+import {auth, signIn} from "@/auth";
 import Preloader from "@/components/Preloader";
 import UserHome from "@/components/UserHome";
 import {Suspense} from "react";
