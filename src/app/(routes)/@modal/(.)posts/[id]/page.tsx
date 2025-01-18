@@ -1,9 +1,12 @@
 import Modal from "@/components/Modal";
 import ModalPostContent from "@/components/ModalPostContent";
 import Preloader from "@/components/Preloader";
-import {Suspense} from "react";
+import { Suspense } from "react";
 
-export default async function PostInModal({params:{id}}:{params:{id:string}}) {
+// Async function to await params
+export default async function PostInModal({ params }: { params: { id: string } }) {
+  const { id } = params; // Await params to get dynamic route parameters
+
   return (
     <Modal>
       <Suspense fallback={<Preloader />}>
@@ -12,3 +15,4 @@ export default async function PostInModal({params:{id}}:{params:{id:string}}) {
     </Modal>
   );
 }
+
