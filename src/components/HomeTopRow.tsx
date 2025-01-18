@@ -1,14 +1,13 @@
 import { Avatar } from "@radix-ui/themes";
 import { PlusIcon } from "lucide-react";
-import { Profile, Follower } from "@prisma/client";
+import { Profile} from "@prisma/client";
 
 export default async function HomeTopRow(
   {
-    profiles, follows
+    profiles
   }:
   {
     profiles: Profile[],
-    follows: Follower[]
   }
 ){
   

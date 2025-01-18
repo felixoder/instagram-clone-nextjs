@@ -4,7 +4,7 @@ import { TextArea, Button } from "@radix-ui/themes";
 import { CloudUploadIcon, SendIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-export default function createPage() {
+export default function CreatePage() {
   const [imageUrl, setImageUrl] = useState('');
   const fileInRef = useRef<HTMLInputElement>(null);
   const [file, setFile] = useState<File | null>(null);

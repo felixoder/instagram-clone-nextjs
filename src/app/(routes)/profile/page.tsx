@@ -1,5 +1,4 @@
 import { auth } from "@/auth";
-import Preloader from "@/components/Preloader";
 import ProfilePageContent from "@/components/ProfilePageContent";
 import { prisma } from "@/db";
 import { redirect } from "next/navigation";

@@ -8,12 +8,10 @@ import BookmarkButton from "./BookmarkButton"
 
 export default async function HomePosts(
   {
-    follows,
     profiles
   }
   :
   {
-  follows: Follower[],
   profiles: Profile[]
   }) {
   const posts = await prisma.post.findMany({

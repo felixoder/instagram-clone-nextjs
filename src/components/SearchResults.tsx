@@ -21,7 +21,7 @@ export default async function SearchResults({query}:{query: string}){
   return(
     <div>
       <h1 className="text-lg mt-4">
-         results here "{query}"
+         results here &quot;{query}&quot;
       </h1>
       {profiles?.length > 0 && (
 
@@ -32,7 +32,7 @@ export default async function SearchResults({query}:{query: string}){
           className="flex gap-2 bg-gray-200 dark:bg-gray-700 border border-gray-300 dark:border-gray-700 p-2 rounded-full "
           key={profile.id}>
             <div>
-              <Avatar size="4" radius="full" fallback="user avatar" src={profile.avatar || ""} />
+              <Avatar size="4" radius="full" fallback="user avatar" src={profile.avatar || "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"} />
             </div>
             <div>
               <h3>{profile.name}</h3>

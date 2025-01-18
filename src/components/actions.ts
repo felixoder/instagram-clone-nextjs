@@ -147,7 +147,7 @@ export async function followProfile(profileIdToFollow: string) {
 
 }
 
-export async function unFollowProfile(profileIdToFollow: string) {
+export async function unFollowProfile() {
   const sessionProfile = await prisma.profile.findFirstOrThrow({
     where: {
       email: await getSessionEmailOrThrow()

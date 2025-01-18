@@ -1,4 +1,4 @@
-import { CheckIcon, ChevronLeft, CogIcon } from "lucide-react";
+import { CheckIcon, CogIcon } from "lucide-react";
 import FollowButton from "./FollowButton";
 import { Follower, Profile } from "@prisma/client";
 import Link from "next/link";

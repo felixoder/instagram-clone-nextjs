@@ -1,10 +1,9 @@
-import { Session } from "next-auth";
 import HomeTopRow from "./HomeTopRow";
 import { getSessionEmailOrThrow } from "./actions";
 import { prisma } from "@/db";
 import HomePosts from "./HomePosts";
 
-export default async function UserHome({session}:{session: Session}){
+export default async function UserHome(){
   const follows = await prisma.follower.findMany({
     where: {
       followingProfileEmail: await getSessionEmailOrThrow(),
@@ -17,8 +16,8 @@ export default async function UserHome({session}:{session: Session}){
   })
   return(
       <div className="flex flex-col gap-8">
-        <HomeTopRow follows={follows} profiles={profiles}/>  
-        <HomePosts follows={follows} profiles={profiles} />
+        <HomeTopRow  profiles={profiles}/>  
+        <HomePosts profiles={profiles} />
       </div>
 
   )

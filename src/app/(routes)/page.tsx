@@ -10,7 +10,7 @@ export default async function Home() {
     <div className="">
       {session && (
         <Suspense fallback={<Preloader />}>
-       <UserHome session={session} /> 
+       <UserHome  /> 
        </Suspense>
       )}
       {!session && (
@@ -24,7 +24,7 @@ export default async function Home() {
             className="border px-4 py-2 bg-ig-red text-white rounded-lg"
             type="submit"
           >
-            Login witr google
+            Login with google
           </button>
         </form>
       )}
