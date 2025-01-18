@@ -2,7 +2,7 @@ import Modal from "@/components/Modal";
 import ModalPostContent from "@/components/ModalPostContent";
 import Preloader from "@/components/Preloader";
 import {Suspense} from "react";
-// @ts-ignore
+
 export default async function PostInModal({params:{id}}:{params:{id:string}}) {
   return (
     <Modal>
