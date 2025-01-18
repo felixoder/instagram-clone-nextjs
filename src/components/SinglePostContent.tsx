@@ -5,7 +5,6 @@ import Preloader from "@/components/Preloader";
 import SessionCommentForm from "@/components/SessionCommentForm";
 import {Post, Profile, Comment as CommentModel, Like, Bookmark} from "@prisma/client";
 import {Suspense} from "react";
-import HandleOperations from "./HandleOpearions";
 
 export default async function SinglePostContent({
   post,
