@@ -8,7 +8,8 @@ export default async function PostInModal({
 }: {
   params: Promise<{ id: string }>;
 }) {
- const postId = (await params).id;  return (
+ const postId = (await params).id;  
+  return (
     <Modal>
       <Suspense fallback={<Preloader />}>
         <ModalPostContent postId={postId} />
