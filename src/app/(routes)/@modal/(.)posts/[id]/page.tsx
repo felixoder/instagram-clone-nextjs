@@ -3,15 +3,11 @@ import ModalPostContent from "@/components/ModalPostContent";
 import Preloader from "@/components/Preloader";
 import { Suspense } from "react";
 
-// Explicitly define the type for PageProps
 interface PageProps {
-  params: {
-    id: string;
-  };
+  params: { id: string }; // Define params with the expected structure
 }
 
-// Ensure the function is properly typed
-export default async function PostInModal({ params }: PageProps) {
+export default function PostInModal({ params }: PageProps) {
   const { id } = params;
 
   return (
