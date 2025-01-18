@@ -1,9 +1,17 @@
 import Modal from "@/components/Modal";
 import ModalPostContent from "@/components/ModalPostContent";
 import Preloader from "@/components/Preloader";
-import {Suspense} from "react";
+import { Suspense } from "react";
 
-export default function PostInModal({params:{id}}:{params:{id:string}}) {
+interface PageProps {
+  params: { id: string };
+}
+
+// Async function to await params
+export default async function PostInModal({ params }: PageProps) {
+  const { id } = params; // Access the awaited params directly
+    console.log({id})
+
   return (
     <Modal>
       <Suspense fallback={<Preloader />}>
@@ -12,3 +20,4 @@ export default function PostInModal({params:{id}}:{params:{id:string}}) {
     </Modal>
   );
 }
+
