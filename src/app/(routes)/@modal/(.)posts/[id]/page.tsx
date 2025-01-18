@@ -1,12 +1,12 @@
 import Modal from "@/components/Modal";
 import ModalPostContent from "@/components/ModalPostContent";
 import Preloader from "@/components/Preloader";
-import {Suspense} from "react";
+import { Suspense } from "react";
 
 export default async function PostInModal({
-  params,
-}: { params: { id: string } }) {
-  const { id } = params as { id: string }; // Force TypeScript to treat params as the correct type
+  params: paramsPromise,
+}: { params: Promise<{ id: string }> }) {
+  const { id } = await paramsPromise; // Await the promise to get the resolved value
 
   return (
     <Modal>
@@ -16,3 +16,4 @@ export default async function PostInModal({
     </Modal>
   );
 }
+
