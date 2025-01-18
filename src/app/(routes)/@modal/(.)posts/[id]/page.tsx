@@ -1,9 +1,10 @@
 import Modal from "@/components/Modal";
 import ModalPostContent from "@/components/ModalPostContent";
 import Preloader from "@/components/Preloader";
-import {Suspense} from "react";
+import { Suspense } from "react";
 
-export default async function PostInModal({params}:any) {
+// @ts-ignore: Disabling type checking for params
+export default async function PostInModal({ params }: any) {
   return (
     <Modal>
       <Suspense fallback={<Preloader />}>
@@ -12,3 +13,4 @@ export default async function PostInModal({params}:any) {
     </Modal>
   );
 }
+
