@@ -1,5 +1,5 @@
 import { prisma } from "@/db"
-import { Profile, Follower } from "@prisma/client"
+import { Profile} from "@prisma/client"
 import { Avatar } from "@radix-ui/themes"
 import LikesInfo from "./LikesInfo"
 import { getSessionEmailOrThrow } from "./actions"
