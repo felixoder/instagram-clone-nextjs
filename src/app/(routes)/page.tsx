@@ -8,12 +8,12 @@ export default async function Home() {
 
   return (
     <div className="">
-      {session && (
+      {session?.user?.email? (
         <Suspense fallback={<Preloader />}>
        <UserHome  /> 
        </Suspense>
-      )}
-      {!session && (
+      ):(
+      (
         <form
           action={async () => {
             "use server";
@@ -27,7 +27,9 @@ export default async function Home() {
             Login with google
           </button>
         </form>
+      )
+
       )}
-    </div>
+         </div>
   );
 }

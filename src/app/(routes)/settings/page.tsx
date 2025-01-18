@@ -3,10 +3,11 @@ import SettingsForm from "@/components/SettingsForm";
 import { auth, signOut } from "@/auth";
 import { prisma } from "@/db";
 import { Button } from "@radix-ui/themes";
+import { redirect } from "next/navigation";
 export default async function SettingsPage() {
   const session = await auth();
   
-  if(!session?.user?.email) return 'not logged in!';
+  if(!session?.user?.email) return redirect('/')
   const profile = await prisma.profile.findFirst({
     where: {email: session.user.email}
   });
