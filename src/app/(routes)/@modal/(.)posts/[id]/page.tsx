@@ -3,7 +3,11 @@ import ModalPostContent from "@/components/ModalPostContent";
 import Preloader from "@/components/Preloader";
 import {Suspense} from "react";
 
-export default async function PostInModal({params:{id}}:{params:{id:string}}) {
+export default async function PostInModal({
+  params,
+}: { params: { id: string } }) {
+  const { id } = params as { id: string }; // Force TypeScript to treat params as the correct type
+
   return (
     <Modal>
       <Suspense fallback={<Preloader />}>
