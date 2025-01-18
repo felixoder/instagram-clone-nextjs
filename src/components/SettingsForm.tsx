@@ -56,7 +56,7 @@ export default function SettingsForm({
             className="hidden"
             onChange={ev => setFile(ev.target.files?.[0])}
           />
-            <Button variant="surface"
+            <Button variant="solid"
             disabled={isUploading}
             type="button"
             onClick={()=> fileInRef.current?.click()}
